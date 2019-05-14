@@ -36,5 +36,3 @@
 </li>
 <li>Configurar demais par&acirc;metros de env.php</li>
 </ul>
-
-Agradecimento ao Felipe Renan Vieira da Code Easy pela excelente explicação sobre Slim.
