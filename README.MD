@@ -29,15 +29,15 @@
 <ol>
 <ol>
 <li>Crie a base de dados executando no MySQL o script que est&aacute; em&nbsp;htdocs\api-rt7\sql\scripts.sql</li>
-<li>Execute o localhost:&nbsp;<a href="http://localhost/api-rt7/">http://localhost{sua_porta}/api-rt7/</a>. Voc&ecirc; dever&aacute; ver a seguinte mensagem:&nbsp;
-<h1>Page Not Found</h1>
-<p>The page you are looking for could not be found. Check the address bar to ensure your URL is spelled correctly. If all else fails, you can visit our home page at the link below.</p>
-Esta &eacute; uma mensagem t&iacute;pica do Slim e significa que est&aacute; tudo ok. O servidor n&atilde;o encontrou a p&aacute;gina porque n&atilde;o h&aacute; uma rota parametrizada para este link. Se voc&ecirc; digitar:&nbsp;<a href="http://localhost/api-rt7/">http://localhost{sua_porta}/api-rt7/</a>index.php/noticia, voc&ecirc; receber&aacute; um array vazio. Trata-se de uma rota que retorna um json com as not&iacute;cias cadastradas, como n&atilde;o h&aacute; nenhuma ainda, o retorno &eacute; vazio.</li>
-<li>Dumpautoload:
+  <li>Dumpautoload:
 <ul>
 <li>Na pasta raiz do projeto execute: composer dumpautoload -o</li>
 </ul>
 </li>
+<li>Execute o localhost:&nbsp;<a href="http://localhost/api-rt7/">http://localhost{sua_porta}/api-rt7/</a>. Voc&ecirc; dever&aacute; ver a seguinte mensagem:&nbsp;
+<h1>Page Not Found</h1>
+<p>The page you are looking for could not be found. Check the address bar to ensure your URL is spelled correctly. If all else fails, you can visit our home page at the link below.</p>
+Esta &eacute; uma mensagem t&iacute;pica do Slim e significa que est&aacute; tudo ok. O servidor n&atilde;o encontrou a p&aacute;gina porque n&atilde;o h&aacute; uma rota parametrizada para este link. Se voc&ecirc; digitar:&nbsp;<a href="http://localhost/api-rt7/">http://localhost{sua_porta}/api-rt7/</a>index.php/noticia, voc&ecirc; receber&aacute; um array vazio. Trata-se de uma rota que retorna um json com as not&iacute;cias cadastradas, como n&atilde;o h&aacute; nenhuma ainda, o retorno &eacute; vazio.</li>
 <li>Configure a conex&atilde;o em env.php e seta a chave em JWT_SECRET_KEY;</li>
 <li>Use o sistema de gerador de hash com Argon2i do php 7.2 executando:
 <ul>
