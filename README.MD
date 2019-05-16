@@ -121,3 +121,24 @@ Esta &eacute; uma mensagem t&iacute;pica do Slim e significa que est&aacute; tud
 </li>
 </ol>
 <p>O mesmo procedimento dos eventos pode ser feito para as not&iacute;cias colocando-se "/noticia" na url, por&eacute;m a requisi&ccedil;&atilde;o "GET noticias" n&atilde;o necessita autentica&ccedil;&atilde;o.</p>
+<ul>
+<li>Exemplo de "PUT noticia":
+<ul>
+<li>{ "ntc_id":"1" ,"ntc_titulo":"asdf" ,"ntc_subtitulo":"teste" ,"ntc_texto":"fdsa" ,"ntc_data":"asdf"}</li>
+</ul>
+</li>
+<li>Exemplo de "DEL noticia":
+<ul>
+<li>{ "ntc_id":1}</li>
+</ul>
+</li>
+<li>Para o "POST noticias", crie uma requisi&ccedil;&atilde;o estruturada do tipo Multipart Form e passe por exemplo:
+<ul>
+<li>imagem -&gt; um file (imagem)</li>
+<li>ntc_titulo -&gt; "T&iacute;tulo teste"</li>
+<li>ntc_subtitulo -&gt; "subtitulo teste"</li>
+<li>ntc_texto -&gt; um Text(Multi-line)</li>
+<li>ntc_data -&gt; "2019-12-05 20:45:00"</li>
+</ul>
+</li>
+</ul>
