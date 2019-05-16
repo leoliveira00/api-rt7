@@ -77,10 +77,47 @@ Esta &eacute; uma mensagem t&iacute;pica do Slim e significa que est&aacute; tud
 </li>
 </ul>
 </li>
-<li>Ainda no Insomnia:
 <ol>
+<li>Ainda no Insomnia:
+<ul>
 <li>Crie uma nova pasta (Ctrl+Shift+N) e nomeie como "Autentica&ccedil;&atilde;o";</li>
-<li>Dentro da pasta, crie uma nova requisi&ccedil;&atilde;o (Ctrl+N);</li>
-</ol>
+<li>Dentro da pasta, crie uma nova requisi&ccedil;&atilde;o do tipo POST (Ctrl+N) e nomeie como "POST login";
+<ul>
+<li>Na requisi&ccedil;&atilde;o criada, passe um JSON parecido com este:
+<ul>
+<li>{ "usr_email": "user@gmail.com" ,"usr_senha": "teste123" ,"expire_date": "2019-05-20 00:00:00"}</li>
+</ul>
+</li>
+<li>Em Bearer, passe o Token criado no Ambiente</li>
+<li>Execute a requisi&ccedil;&atilde;o. Voc&ecirc; receber&aacute; de volta o token e um refresh_token. Configure o refresh_token no Ambiente ficando parecido com isto:
+<ul>
+<li>{<br /> "baseURL": "http://localhost/api-rt7/index.php",<br /> "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVzZXJAZ21haWwuY29tIiwicmFtZG9tIjoiNWNkZGVmMWIyNWU2NCJ9.qSl7ElyDrMi6WVrrWajLnOJiCu0QSMFRLkq9Nr0cuR0",<br /> "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsIm5hbWUiOiJVc2VyIDAxIiwiZW1haWwiOiJ1c2VyQGdtYWlsLmNvbSIsImV4cGlyZWRfYXQiOiIyMDE5LTA1LTIwIDAwOjAwOjAwIn0.EBRqgOzldRcN6c6Ows7pT52XditAJQjboJrRuSAdONg"<br />}</li>
+<li>Cuidado com as posi&ccedil;&otilde;es invertidas de token e refresh_token neste json</li>
+</ul>
+</li>
+<li>Pronto. Voc&ecirc; est&aacute; autentidado.</li>
+</ul>
+</li>
+<li>Agora, no Insomnia, crie uma pasta "Eventos" e dentro dela, crie as requisi&ccedil;&otilde;es GET, POST, PUT e DEL. N&atilde;o esque&ccedil;a de passar a baseURL/evento e o tokem em Bearer, onde voc&ecirc; pode tamb&eacute;m desabilitar o token para testar a autentica&ccedil;&atilde;o.
+<ul>
+<li>Exemplo de POST:
+<ul>
+<li>{ "evt_data":"10/05/2019" ,"evt_descr":"evento teste" ,"evt_flg_ativo":"S"}</li>
+</ul>
+</li>
+<li>Exemplo de PUT:
+<ul>
+<li>{ "evt_id": 1 ,"evt_data":"10/05/2019" ,"evt_descr":"evento teste 2" ,"evt_flg_ativo":"S"}</li>
+</ul>
+</li>
+<li>Exemplo de DEL:
+<ul>
+<li>{ evt_id": 5}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
+<p>O mesmo procedimento dos eventos pode ser feito para as not&iacute;cias colocando-se "/noticia" na url, por&eacute;m a requisi&ccedil;&atilde;o "GET noticias" n&atilde;o necessita autentica&ccedil;&atilde;o.</p>
