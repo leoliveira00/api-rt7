@@ -30,6 +30,6 @@ CREATE TABLE rt7.noticias (
    ntc_titulo VARCHAR(100) NOT NULL,
    ntc_subtitulo text NULL,
    ntc_texto text NOT NULL,
-   ntc_imagem VARCHAR(255) default NULL,
+   ntc_path_img VARCHAR(255) default NULL,
    ntc_data DATETIME NOT NULL
 );
